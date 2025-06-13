@@ -1,0 +1,11 @@
+.relogio-container {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 48px;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(to right, #000, #444);
+    color: #0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0f0;
+}
