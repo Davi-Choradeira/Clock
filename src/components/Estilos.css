@@ -1,11 +1,135 @@
 .relogio-container {
+    position: relative;
     text-align: center;
     margin-top: 50px;
     font-size: 48px;
     font-family: 'Courier New', monospace;
-    background: linear-gradient(to right, #000, #444);
-    color: #0f0;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px #0f0;
+    transition: all 0.5s ease-in-out;
+    perspective: 1200px;
+}
+
+/* Animação pulsante aplicada apenas aos estilos que usam <h2> com segurança */
+.digital h2,
+.futurista h2 {
+    animation: pulsar 1s ease-in-out infinite;
+}
+
+/* Digital */
+.digital h2 {
+    transform: rotateX(20deg);
+    text-shadow: 0 5px 15px rgba(0, 255, 0, 0.6);
+    color: lime;
+    font-size: 60px;
+}
+
+/* Analógico */
+.analogico .ponteiros,
+.ponteiro-relogio {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid #444;
+    background: radial-gradient(circle, #eee, #ccc);
+    margin: 0 auto;
+    position: relative;
+}
+
+.ponteiro {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    background: #333;
+    border-radius: 2px;
+}
+
+.ponteiro.hora {
+    width: 6px;
+    height: 50px;
+    background: #222;
+    z-index: 3;
+}
+
+.ponteiro.minuto {
+    width: 4px;
+    height: 70px;
+    background: #555;
+    z-index: 2;
+}
+
+.ponteiro.segundo {
+    width: 2px;
+    height: 90px;
+    background: red;
+    z-index: 1;
+}
+
+/* Futurista */
+.futurista h2 {
+    transform: rotateY(-15deg) skewX(4deg);
+    text-shadow: 0 0 30px cyan, 0 0 70px cyan;
+    font-size: 70px;
+    color: cyan;
+}
+
+/* Retrô */
+.retro h2 {
+    background: black;
+    color: orange;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+}
+
+/* Efeito de brilho */
+.relogio-container::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    background: linear-gradient(45deg, #00f, #0ff, #00f, #0ff);
+    z-index: -1;
+    filter: blur(20px);
+    animation: brilho 8s linear infinite;
+}
+
+@keyframes brilho {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Botões interativos */
+.botoes {
+    margin-top: 20px;
+}
+
+.botoes button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #555;
+    color: white;
+    transition: 0.3s;
+}
+
+.botoes button:hover {
+    background: #777;
+}
+
+/* Botão selecionado */
+.botoes button.ativo {
+    background: #0ff;
+    color: #000;
+    font-weight: bold;
+    transform: scale(1.1);
 }
