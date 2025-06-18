@@ -1,10 +1,54 @@
-.App {
-  text-align: center;
-  font-family: sans-serif;
-  min-height: 100vh;
-  background-color: #111;
+﻿body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
   color: white;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Efeito de partículas de fundo */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: stars 50s linear infinite;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+@keyframes stars {
+  from { background-position: 0 0; }
+  to { background-position: -200px 200px; }
 }
