@@ -12,21 +12,6 @@
 .app {
   text-align: center;
   padding: 2rem;
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.app {
-  text-align: center;
-  padding: 2rem;
   max-width: 800px;
   width: 100%;
 }
@@ -52,3 +37,86 @@ body {
   from { background-position: 0 0; }
   to { background-position: -200px 200px; }
 }
+
+/* -------- Botões de estilo -------- */
+.style-selector {
+  margin-top: 2rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.style-selector button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #333, #222);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.style-selector button:hover {
+  background: linear-gradient(135deg, #555, #333);
+  transform: translateY(-2px);
+}
+
+.style-selector button.active {
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 188, 212, 0.4);
+  transform: scale(1.05);
+}
+
+/* Transição suave ao trocar estilos */
+.clock-container > div {
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 0.5s forwards;
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.clock-container.digital {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: background 0.5s ease;
+}
+
+.clock-container.analog {
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  border: 2px solid #444;
+  border-radius: 50%;
+  transition: background 0.5s ease;
+}
+
+.clock-container.futurist {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  box-shadow: 0 0 20px #00f2ff;
+  border-radius: 12px;
+  transition: background 0.5s ease;
+}
+
+.clock-container.retro {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe066,
+    #ffe066 10px,
+    #ff6b6b 10px,
+    #ff6b6b 20px
+  );
+  border: 2px dashed #fff;
+  transition: background 0.5s ease;
+}
+
