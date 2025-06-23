@@ -1,0 +1,60 @@
+.clock-container {
+  transition: background 0.6s ease, color 0.4s ease;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+/* Estilo para digital */
+.clock-container.digital {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+/* Estilo para analógico */
+.clock-container.analog {
+  background: radial-gradient(circle, #1a1a1a, #000000);
+  border: 2px solid #444;
+  color: #eee;
+}
+
+/* Estilo futurista */
+.clock-container.futurist {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  box-shadow: 0 0 20px #00f2ff;
+  color: #00f2ff;
+}
+
+/* Estilo retrô */
+.clock-container.retro {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe066,
+    #ffe066 10px,
+    #ff6b6b 10px,
+    #ff6b6b 20px
+  );
+  color: #000;
+  border: 2px dashed #000;
+}
+
+/* Botões */
+.style-selector button {
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 8px 16px;
+  margin: 0 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.style-selector button:hover {
+  background-color: #444;
+}
+
+.style-selector button.active {
+  background-color: #00c8ff;
+  color: #000;
+}
