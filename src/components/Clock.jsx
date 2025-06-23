@@ -3,6 +3,7 @@ import './styles/DigitalClock.css';
 import './styles/AnalogClock.css';
 import './styles/FuturistClock.css';
 import './styles/RetroClock.css';
+import './styles/ClockThemes.css'; // Novo arquivo sugerido para os fundos
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
@@ -29,7 +30,7 @@ const Clock = () => {
   };
 
   return (
-    <div className="clock-container">
+    <div className={`clock-container ${clockStyle}`}>
       <h1>Relógio Estiloso</h1>
       {renderClock()}
       <div className="style-selector">
@@ -59,7 +60,7 @@ const AnalogClock = ({ time }) => {
   const seconds = time.getSeconds();
   const minutes = time.getMinutes();
   const hours = time.getHours() % 12;
-  
+
   return (
     <div className="analog-clock">
       <div className="clock-face">
